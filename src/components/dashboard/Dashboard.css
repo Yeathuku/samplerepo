@@ -1,0 +1,26 @@
+.dashboard-container {
+    padding: 20px;
+  }
+  
+  .chart-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .chart-item {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .empty-item {
+    height: 300px; /* Same height as the charts */
+  }
+  

@@ -1,0 +1,95 @@
+    *::after,
+    *::before {
+        padding: inherit;
+        margin: inherit;
+        box-sizing: inherit;
+    }
+
+    /* html {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        
+    } */
+
+    .body {
+        --color: #eb56ca;
+        --hover-b: #000;
+        --hover-w: #fff;
+        display: grid;
+        place-content: center;
+        background-color: rgb(255, 255, 255);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        /* background: none;
+        border: 5px solid #b83636; */
+        border: 1px solid rgb(192, 189, 189);
+        padding: 1em 2.9em;
+        margin: 2.5em;
+        user-select: none;
+        /* text-transform: uppercase; */
+        color: var(--color);
+        letter-spacing: 2.2px;
+        cursor: pointer;
+        /* border-radius: 1000px; */
+        transform: translateY(0);
+        transition: all 0.5s linear;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* the inset brings the box-shadow from the inside */
+    
+
+    .burst:hover {
+        box-shadow: 0 0 0.6rem 1px var(--color);
+        transform: translateY(-0.5rem);
+    }
+
+    /* @media only screen and (max-width: 1080px) {
+    div {
+        display: grid; 
+        grid-template-columns: repeat(2, auto); 
+    }
+}*/
+
+    @media only screen and (max-width: 600px) {
+    div {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+    }
+
+}
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  /* footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom 
+} */
+
+/* 
+.container {
+    min-height: 100vh; /* Set the container height to at least the viewport height 
+    display: flex;
+    flex-direction: column;
+}*/
+.head{
+    display: flex;
+    margin: 0;
+    background-color: #f4ace4;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: #dbb8d3;
+}
