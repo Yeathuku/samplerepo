@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Tableflow } from "../service/Axios";
+import { Tableflow } from "../../service/Axios";
 import { useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import './EmployeeTable.css';
 import * as XLSX from 'xlsx';
 
 const EmployeeTable = () => {
@@ -55,41 +56,47 @@ const EmployeeTable = () => {
 
     return (
         <div className='container'>
-            <div>
-                <h1 className='text-center'>List the Details</h1>
-                <button onClick={exportPDF}>Export to PDF</button>
-                <button onClick={exportExcel}>Export to Excel</button>
+            <div className='header'>
+                <h1 className='title'>List the Details</h1>
+            </div>
+          
+            <div className='export-buttons'>
+            
+                <button className='primary-btn' onClick={exportPDF}>Export to PDF</button>
+                <button className='secondary-btn' onClick={exportExcel}>Export to Excel</button>
             </div>
             {error && <p className='text-danger'>Error: {error}</p>}
-            <table id='employee-table' className='table table-striped table-bordered'>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {employee.map((emp) => (
-                        <tr key={emp.id}>
-                            <td>{emp.id}</td>
-                            <td>{emp.firstName}</td>
-                            <td>{emp.lastName}</td>
-                            <td>{emp.email}</td>
-                            <td>{emp.userName}</td>
-                            <td>{emp.password}</td>
-                            <td>
-                                <button onClick={() => updateEmployee(emp.id)}>Update</button>
-                                <button className='btn btn-danger' onClick={() => removeEmployee(emp.id)}>Delete</button>
-                            </td>
+            <div className='table-container'>
+                <table id='employee-table' className='table table-striped table-bordered'>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Action</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {employee.map((emp) => (
+                            <tr key={emp.id}>
+                                <td>{emp.id}</td>
+                                <td>{emp.firstName}</td>
+                                <td>{emp.lastName}</td>
+                                <td>{emp.email}</td>
+                                <td>{emp.userName}</td>
+                                <td>{emp.password}</td>
+                                <td>
+                                    <button className='update-button' onClick={() => updateEmployee(emp.id)}>Update</button>
+                                    <button className='dalete-button' onClick={() => removeEmployee(emp.id)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

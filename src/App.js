@@ -2,7 +2,7 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import EmployeeTable from './components/EmployeeTable';
+import EmployeeTable from './components/employee/EmployeeTable';
 import Login from './components/Login';
 
 import UserForm from './components/employee/UserForm';
